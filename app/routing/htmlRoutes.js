@@ -1,17 +1,26 @@
-// =============================================================
 
-// Basic route that sends the user first to the AJAX Page
-// Create a GET route for the root path
-// callback function takes in a request and response object from express that we use the response object to send back HTML
-app.get("/", function(req, res) {
-    console.log(res)
-    // Use express .sendFile method which takes the path of the file we want to serve to the client
-    // The path.join() method joins all given path segments together
-    // __dirname returns the path of the current application
-    res.sendFile(path.join(__dirname, "home.html"));
-    // res.sendFile(__dirname + "/view.html");
-  });
-  
+// ===============================================================================
+// DEPENDENCIES
+// We need to include the path package to get the correct file path for our html
+// ===============================================================================
+var path = require("path");
+
+// ===============================================================================
+// ROUTING
+// ===============================================================================
+
+module.exports = function(app) {
+  // HTML GET Requests
+  // Below code handles when users "visit" a page.
+  // In each of the below cases the user is shown an HTML page of content
+  // ---------------------------------------------------------------------------
+
   app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "survey.html"));
+    res.sendFile(path.join(__dirname, "../public/survey.html"));
   });
+
+  // If no matching route is found default to home
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/home.html"));
+  });
+};
