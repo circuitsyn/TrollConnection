@@ -16,7 +16,7 @@
     <div class="container">  
 
         <div class="row">
-            <h2 class="d-flex align-items-center"><img class="mr-1" src="Images/orcIcon.png" alt="Survey Icon" height="40px">
+            <h2 class="d-flex align-items-center mt-4"><img class="mr-1" src="Images/orcIcon.png" alt="Survey Icon" height="40px">
                 Troll Survey Form
             </h2>
         </div>
@@ -33,14 +33,14 @@
         <p class="mb-0 mt-1 p-1">
             Bestowed Name of The Cursed (Required):
         </p>
-        <input class="form-control" type="text" placeholder="Default input">
+        <input class="form-control" type="text" placeholder="Enter your name here">
     </div>
 
     <div class="row">
         <p class="mb-0 mt-1 p-1">
             Link to Photo Image (Required)
         </p>
-        <input class="form-control" type="text" placeholder="Default input">
+        <input class="form-control" type="text" placeholder="Provide a link to a picture of that lovely ugly mug here">
     </div>
 
     <hr>
@@ -232,6 +232,35 @@
     
     
     <hr>
+    <!-- Modal to display match -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Launch demo modal
+        </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- footer -->
     <footer>
         <a href="/api/trolls">API Trolls List</a> | <a href="https://github.com/circuitsyn/TrollConnection">GitHub Repo</a> | <a href="/home">Home</a>
     

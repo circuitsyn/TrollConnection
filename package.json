@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/circuitsyn/TrollConnection/issues"
   },
-  "homepage": "https://github.com/circuitsyn/TrollConnection#readme"
+  "homepage": "https://github.com/circuitsyn/TrollConnection#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  }
 }
