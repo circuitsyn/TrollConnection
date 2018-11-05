@@ -1,0 +1,20 @@
+{
+  "name": "trollconnection",
+  "version": "1.0.0",
+  "description": "A love connection site for trolls",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/circuitsyn/TrollConnection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/circuitsyn/TrollConnection/issues"
+  },
+  "homepage": "https://github.com/circuitsyn/TrollConnection#readme"
+}
