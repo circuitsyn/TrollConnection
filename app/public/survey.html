@@ -33,14 +33,14 @@
         <p class="mb-0 mt-1 p-1">
             Bestowed Name of The Cursed (Required):
         </p>
-        <input class="form-control" type="text" placeholder="Enter your name here">
+        <input id="nameInput" class="form-control" type="text" placeholder="Enter your name here">
     </div>
 
     <div class="row">
         <p class="mb-0 mt-1 p-1">
             Link to Photo Image (Required)
         </p>
-        <input class="form-control" type="text" placeholder="Provide a link to a picture of that lovely ugly mug here">
+        <input id="imageInput" class="form-control" type="text" placeholder="Provide a link to a picture of that lovely ugly mug here">
     </div>
 
     <hr>
@@ -55,7 +55,7 @@
             You prefer to operate under bridges.
         </p>
         
-        <select class="custom-select" style="width: 200px">
+        <select id="q1" class="custom-select" style="width: 200px">
             <option selected>Pick on a scale of 1 - 5</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -73,7 +73,7 @@
             You often ask three riddle questions before anyone shall pass.
         </p>
         
-        <select class="custom-select" style="width: 200px">
+        <select id="q2" class="custom-select" style="width: 200px">
             <option selected>Pick on a scale of 1 - 5</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -91,7 +91,7 @@
             You prefer a fresh kill to a meal that is handed to you.
         </p>
         
-        <select class="custom-select" style="width: 200px">
+        <select id="q3" class="custom-select" style="width: 200px">
             <option selected>Pick on a scale of 1 - 5</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -109,7 +109,7 @@
             It is the size of your horns that matters most.
         </p>
         
-        <select class="custom-select" style="width: 200px">
+        <select id="q4" class="custom-select" style="width: 200px">
             <option selected>Pick on a scale of 1 - 5</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -127,7 +127,7 @@
             The idea of associating with the humans disgusts you.
         </p>
         
-        <select class="custom-select" style="width: 200px">
+        <select id="q5" class="custom-select" style="width: 200px">
             <option selected>Pick on a scale of 1 - 5</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -145,7 +145,7 @@
             You agree with the statement that in order to suceed you must divide to conquer.
         </p>
         
-        <select class="custom-select" style="width: 200px">
+        <select id="q6" class="custom-select" style="width: 200px">
             <option selected>Pick on a scale of 1 - 5</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -163,7 +163,7 @@
             You are offended by how troll kind is portrayed in modern media and video games.
         </p>
         
-        <select class="custom-select" style="width: 200px">
+        <select id="q7" class="custom-select" style="width: 200px">
             <option selected>Pick on a scale of 1 - 5</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -181,7 +181,7 @@
             Reflect on the truth in this statement. Trolls are some of the most affectionate beings around.
         </p>
         
-        <select class="custom-select" style="width: 200px">
+        <select id="q8" class="custom-select" style="width: 200px">
             <option selected>Pick on a scale of 1 - 5</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -199,7 +199,7 @@
             Primal instincts are the only instincts.
         </p>
         
-        <select class="custom-select" style="width: 200px">
+        <select id="q9" class="custom-select" style="width: 200px">
             <option selected>Pick on a scale of 1 - 5</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -217,7 +217,7 @@
             Your aspirations are to follow a great troll leader.
         </p>
         
-        <select class="custom-select" style="width: 200px">
+        <select id="q10" class="custom-select" style="width: 200px">
             <option selected>Pick on a scale of 1 - 5</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -228,15 +228,15 @@
     </div>
 
     <!-- Submit Button -->
-    <input class="btn btn-success pt-3 pb-3 pl-5 pr-5 font-weight-bold" type="submit" value="Get Trollin' (Submit)">
+    <input class="btn btn-success pt-3 pb-3 pl-5 pr-5 font-weight-bold submit" type="submit" value="Get Trollin' (Submit)">
     
     
     <hr>
     <!-- Modal to display match -->
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
             Launch demo modal
-        </button>
+        </button> -->
       
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -274,3 +274,57 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<script type="text/javascript">
+$(".submit").on("click", function(event) {
+    event.preventDefault();
+
+    // Here we grab the form elements
+    var newTroll = {
+      name: $("#nameInput").val().trim(),
+      photo: $("#imageInput").val().trim(),
+      scores: [
+          $("#q1").val(),
+          $("#q2").val(),
+          $("#q3").val(),
+          $("#q4").val(),
+          $("#q5").val(),
+          $("#q6").val(),
+          $("#q7").val(),
+          $("#q8").val(),
+          $("#q9").val(),
+          $("#q10").val()
+    ]
+    };
+
+    console.log(newTroll);
+
+    // This line is the magic. It"s very similar to the standard ajax function we used.
+    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+    // depending on if a tables is available or not.
+
+    $.post("/api/tables", newTroll,
+      function(data) {
+
+        // If a table is available... tell user they are booked.
+        if (data) {
+          alert("Yay! You are officially booked!");
+        }
+
+        // If a table is available... tell user they on the waiting list.
+        else {
+          alert("Sorry you are on the wait list");
+        }
+
+        // Clear the form when submitting
+        $("#reserve-name").val("");
+        $("#reserve-phone").val("");
+        $("#reserve-email").val("");
+        $("#reserve-unique-id").val("");
+
+      });
+
+  });
+
+</script>
