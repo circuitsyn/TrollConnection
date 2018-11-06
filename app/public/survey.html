@@ -239,17 +239,25 @@
         </button> -->
       
       <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <h5 class="modal-title" id="modalTitle">Your Match!</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            <!-- Match Results Area -->
             <div class="modal-body">
-              ...
+                
+                <h6 id="modalName">
+
+                </h6>
+                
+                <img id="modalImg" src="">
+
+                
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -304,25 +312,13 @@ $(".submit").on("click", function(event) {
     // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
     // depending on if a tables is available or not.
 
-    $.post("/api/tables", newTroll,
-      function(data) {
+    $.post("/api/trolls", newTroll, function(data) {
 
-        // If a table is available... tell user they are booked.
-        if (data) {
-          alert("Yay! You are officially booked!");
-        }
+        $("#modalName").text(data.name);
+        $("#modalImg").attr("src",data.photo);
 
-        // If a table is available... tell user they on the waiting list.
-        else {
-          alert("Sorry you are on the wait list");
-        }
-
-        // Clear the form when submitting
-        $("#reserve-name").val("");
-        $("#reserve-phone").val("");
-        $("#reserve-email").val("");
-        $("#reserve-unique-id").val("");
-
+        //Show results
+        $("#matchModal").modal("toggle");
       });
 
   });

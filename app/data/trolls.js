@@ -39,6 +39,22 @@ var trollArray = [
             1
           ]
       },
+      {
+        "name":"Trarnac The Powerful",
+        "photo":"http://fc01.deviantart.net/fs17/i/2007/177/4/4/Huge_Orc_by_Ilacha.jpg",
+        "scores":[
+            1,
+            1,
+            5,
+            5,
+            5,
+            1,
+            3,
+            1,
+            5,
+            1
+          ]
+      },
 
   ];
   
