@@ -228,7 +228,7 @@
     </div>
 
     <!-- Submit Button -->
-    <input class="btn btn-success pt-3 pb-3 pl-5 pr-5 font-weight-bold submit" type="submit" value="Get Trollin' (Submit)">
+    <input id="submit" class="btn btn-success pt-3 pb-3 pl-5 pr-5 font-weight-bold" type="submit" value="Get Trollin' (Submit)">
     
     
     <hr>
@@ -284,8 +284,53 @@
 </html>
 
 <script type="text/javascript">
-$(".submit").on("click", function(event) {
+
+var match;
+var leadingMatchDiffNum;
+var currentNum;
+var status;
+var count;
+var trollData = require("../data/trolls.js");
+//function to figure out match
+function findMatch(trollData, newTroll) {
+    for(i = 0; i < trollArray.length; i++){
+
+            if(currentNum < leadingMatchDiffNum){
+                leadingMatchDiffNum = currentNum;
+            }
+        
+        for(j = 0; j < newTroll; j++){
+            count = Math.abs(trollArray[i].scores[j] - newTroll[j]);
+            
+            status += count;
+            
+        }
+        currentNum = status; 
+    }
+}
+
+function postResult(resultUser) {
+    //append name
+    var title = $('<h3>');
+    $(title).text(resultUser.name)
+    $('#modalName').empty();
+    $('#modalName').append(title);
+
+    //append img
+    var img = $('<img>');
+    $(img).attr('src', resultUser.photo);
+    $(img).attr('alt', 'Match Image Result');
+    $('#modalImg').empty();
+    $('modalImg').append(img);
+};
+
+
+
+
+$("#submit").on("click", function(event) {
     event.preventDefault();
+
+    
 
     // Here we grab the form elements
     var newTroll = {
@@ -304,7 +349,7 @@ $(".submit").on("click", function(event) {
           $("#q10").val()
     ]
     };
-
+    
     console.log(newTroll);
 
     // This line is the magic. It"s very similar to the standard ajax function we used.
@@ -320,6 +365,8 @@ $(".submit").on("click", function(event) {
         //Show results
         $("#matchModal").modal("toggle");
       });
+    findMatch();
+    postResult(resultUser);
 
   });
 
