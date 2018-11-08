@@ -55,6 +55,22 @@ var trollArray = [
             1
           ]
       },
+      {
+        "name": "Trenrock the Meager",
+        "photo": "https://pbs.twimg.com/profile_images/2418078489/h2kpe8vpnxj4kfnxctc1_400x400.gif",
+        "scores": [
+        "5",
+        "4",
+        "1",
+        "1",
+        "5",
+        "2",
+        "3",
+        "2",
+        "5",
+        "5"
+        ]
+        }
 
   ];
   
