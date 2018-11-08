@@ -290,7 +290,7 @@ var leadingMatchDiffNum;
 var currentNum;
 var status;
 var count;
-var trollData = require("../data/trolls.js");
+
 //function to figure out match
 function findMatch(trollData, newTroll) {
     for(i = 0; i < trollArray.length; i++){
@@ -309,6 +309,7 @@ function findMatch(trollData, newTroll) {
     }
 }
 
+//function to build modals before triggering the user result
 function postResult(resultUser) {
     //append name
     var title = $('<h3>');
@@ -359,14 +360,23 @@ $("#submit").on("click", function(event) {
 
     $.post("/api/trolls", newTroll, function(data) {
 
-        $("#modalName").text(data.name);
-        $("#modalImg").attr("src",data.photo);
+        // using to test and see if data posts
+        if (data) {
+          alert("Yay! Here is your match!");
+        }
 
-        //Show results
-        $("#matchModal").modal("toggle");
+        // If a table is available... tell user they on the waiting list.
+        else {
+          alert("Sorry you will die a lonely troll...");
+        }
       });
-    findMatch();
-    postResult(resultUser);
+    
+      //move these inside the ajax call to get proper data ***
+    // findMatch();
+    // postResult(resultUser);
+
+    //Show results
+    $("#matchModal").modal("toggle");
 
   });
 
