@@ -288,41 +288,60 @@
 
 <script type="text/javascript">
 
-var match;
-var leadingMatchDiffNum;
-var currentNum;
-var status;
-var count;
+
+var leadingMatchDiffNum = 0;
+var currentNum = 0;
+var status = 0;
+var count = 0;
+var resultTroll;
+
+//function to grab data and find match
+function dataCall(newTroll) {
+    // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+    $.ajax({ url: "/api/trolls", method: "GET" })
+      .then(function(trollData) {
+
+        // Here we then log the tableData to console, where it will show up as an object.
+        console.log('troll data: ', trollData);
+        console.log("------------------------------------");
+        
+        findMatch(trollData, newTroll);
+        
+        
+      });
+  }
 
 //function to figure out match
 function findMatch(trollData, newTroll) {
-    for(i = 0; i < trollArray.length; i++){
-
-            if(currentNum < leadingMatchDiffNum){
-                leadingMatchDiffNum = currentNum;
-            }
+    for(i = 0; i < trollData.length; i++){       
         
-        for(j = 0; j < newTroll; j++){
-            count = Math.abs(trollArray[i].scores[j] - newTroll[j]);
+        for(j = 0; j < newTroll.scores.length; j++){
+            count = Math.abs(trollArray[i].scores[j] - newTroll.scores[j]);
             
             status += count;
             
         }
+        
         currentNum = status; 
+        if((currentNum < leadingMatchDiffNum) || (currentNum == leadingMatchDiffNum)){
+                leadingMatchDiffNum = currentNum;
+                resultTroll = trollArray[i-1];
+        }
     }
+    postResult(resultTroll);
 }
 
 //function to build modals before triggering the user result
-function postResult(resultUser) {
+function postResult(resultTroll) {
     //append name
     var title = $('<h3>');
-    $(title).text(resultUser.name)
+    $(title).text(resultTroll.name)
     $('#modalName').empty();
     $('#modalName').append(title);
 
     //append img
     var img = $('<img>');
-    $(img).attr('src', resultUser.photo);
+    $(img).attr('src', resultTroll.photo);
     $(img).attr('alt', 'Match Image Result');
     $('#modalImg').empty();
     $('modalImg').append(img);
@@ -354,29 +373,27 @@ $("#submit").on("click", function(event) {
     ]
     };
     
-    console.log(newTroll);
+    console.log('new troll: ', newTroll);
 
-    // This line is the magic. It"s very similar to the standard ajax function we used.
-    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a tables is available or not.
+    //call to kick off data retrieval and innerfunctions to analyza and launch data
+    dataCall(newTroll);
 
     $.post("/api/trolls", newTroll, function(data) {
 
-        // using to test and see if data posts
-        if (data) {
-          alert("Yay! Here is your match!");
-        }
+    //     // using to test and see if data posts
+    //     if (data) {
+    //       alert("Yay! Here is your match!");
+    //     }
 
-        // If a table is available... tell user they on the waiting list.
-        else {
-          alert("Sorry you will die a lonely troll...");
-        }
-      });
+    //     // If a table is available... tell user they on the waiting list.
+    //     else {
+    //       alert("Sorry you will die a lonely troll...");
+    //     }
+    //   });
     
       //move these inside the ajax call to get proper data ***
     // findMatch();
-    // postResult(resultUser);
+    // postResult(resultTroll);
 
     //Show results
     $("#matchModal").modal("toggle");
