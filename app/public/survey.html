@@ -375,26 +375,10 @@ $("#submit").on("click", function(event) {
     //call to kick off data retrieval and innerfunctions to analyza and launch data
     dataCall(newTroll);
 
-    $.post("/api/trolls", newTroll, function(data) {
-
-    //     // using to test and see if data posts
-    //     if (data) {
-    //       alert("Yay! Here is your match!");
-    //     }
-
-    //     // If a table is available... tell user they on the waiting list.
-    //     else {
-    //       alert("Sorry you will die a lonely troll...");
-    //     }
-    //   });
-    
-      //move these inside the ajax call to get proper data ***
-    // findMatch();
-    // postResult(resultTroll);
-
-    //Show results
-    $("#matchModal").modal("toggle");
+    $.post("/api/trolls", newTroll, function(data) {  
 
   });
-
+        //Show results
+        $("#matchModal").modal("toggle");
+});
 </script>
