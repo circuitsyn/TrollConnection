@@ -320,9 +320,13 @@ function findMatch(trollData, newTroll) {
         }
         
         currentNum = status; 
-        if((currentNum < leadingMatchDiffNum) || (currentNum == leadingMatchDiffNum)){
+        if((currentNum < leadingMatchDiffNum) || (leadingMatchDiffNum == 0)){
                 leadingMatchDiffNum = currentNum;
-                resultTroll = trollData[i-1];
+                resultTroll = trollData[i];
+                console.log('i: ',i);
+                console.log(trollData[i]);
+                console.log('result troll: ', resultTroll);
+                
         }
     }
     postResult(resultTroll);
@@ -332,7 +336,7 @@ function findMatch(trollData, newTroll) {
 function postResult(resultTroll) {
     //append name
     var title = $('<h3>');
-    $(title).text(resultTroll.name)
+    $(title).text(resultTroll.name);
     $('#modalName').empty();
     $('#modalName').append(title);
 
@@ -341,7 +345,7 @@ function postResult(resultTroll) {
     $(img).attr('src', resultTroll.photo);
     $(img).attr('alt', 'Match Image Result');
     $('#modalImg').empty();
-    $('modalImg').append(img);
+    $('#modalImg').append(img);
 };
 
 
