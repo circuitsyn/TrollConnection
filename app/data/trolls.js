@@ -86,6 +86,22 @@ var trollArray = [
         "5",
         "1"
         ]
+        },
+    {
+        "name": "Trenlock the Destroyer",
+        "photo": "https://theoriestheses.files.wordpress.com/2017/04/b9a091b4e5beafa4c5a109e0445f6baa.jpg",
+        "scores": [
+        "1",
+        "1",
+        "5",
+        "5",
+        "5",
+        "5",
+        "1",
+        "1",
+        "5",
+        "1"
+        ]
         }
 
   ];
