@@ -118,6 +118,22 @@ var trollArray = [
         "5",
         "1"
         ]
+        },
+    {
+        "name": "Crovar Master of All Things Shadow",
+        "photo": "https://i.pinimg.com/736x/40/b9/d1/40b9d1d1970c0d2babc6ee3f152b98e0--female-orc-character-ideas.jpg",
+        "scores": [
+        "5",
+        "3",
+        "1",
+        "3",
+        "4",
+        "1",
+        "5",
+        "5",
+        "2",
+        "1"
+        ]
         }
 
   ];

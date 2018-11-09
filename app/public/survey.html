@@ -310,19 +310,26 @@ function dataCall(newTroll) {
 
 //function to figure out match
 function findMatch(trollData, newTroll) {
+    
     for(i = 0; i < trollData.length; i++){       
-        
+        //reinitializing zero value to reset current num and counts
+        var leadingMatchDiffNum = 0;
+        var currentNum = 0;
+        var status = 0;
+        var count = 0;
+
         for(j = 0; j < newTroll.scores.length; j++){
-            count = Math.abs(trollData[i].scores[j] - newTroll.scores[j]);
-            
-            status += count;
-            
+            //parseInt is used to prevent string concatination as well as avoiding +=
+            count = Math.abs(parseInt(trollData[i].scores[j]) - parseInt(newTroll.scores[j]));
+            status = parseInt(status) + count;
         }
         
         currentNum = status; 
+        console.log('currentnum: ', currentNum);
         if((currentNum < leadingMatchDiffNum) || (leadingMatchDiffNum == 0)){
                 leadingMatchDiffNum = currentNum;
                 resultTroll = trollData[i];
+                console.log('leading num: ', leadingMatchDiffNum);
                 console.log('i: ',i);
                 console.log(trollData[i]);
                 console.log('result troll: ', resultTroll);
