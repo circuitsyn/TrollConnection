@@ -24,7 +24,8 @@ app.use(express.urlencoded({ extended: true }));
 // A new body object containing the parsed data is populated on the request object after the middleware
 app.use(express.json());
 
-
+//setup a static folder to serve such files as CSS or images
+app.use(express.static('app'));
 
 // ================================================================================
 // ROUTER

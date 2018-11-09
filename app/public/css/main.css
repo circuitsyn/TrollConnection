@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "orcFont";
+    src: url("../fonts/orc.otf") format("woff");
+}
+
+body, html {
+    height: 100%;
+    background-image: url("../Images/medivalBG2.jpg");
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.linkColor {
+    color: rgb(196,142,93);
+    font-weight: bold;
+}
+
+.buttonColor {
+    background-color: rgb(196,142,93);
+}
+
+.mainSurveyArea {
+    background: white;
+    border-radius: 45px;
+    padding: 3% 7% 3% 7%;
+}
+
+.titleFont {
+    font-family: 'orcFont', Courier, monospace;
+}

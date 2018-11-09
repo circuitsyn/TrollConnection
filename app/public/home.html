@@ -8,39 +8,41 @@
 
     <!-- Favicon -->
     <link rel="icon" href="https://png.icons8.com/color/160/orc.png" type="image/png" sizes="32x32">
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="../public/css/main.css">
   </head>
   <body>
       
     <!-- boostrap jumbotron greeting -->
-    <div class="container">
-        <div class="jumbotron mt-4">
-            <div class="row">
-                <img src="https://png.icons8.com/color/160/orc.png" alt="Orc Icon" height="100px">
-                <h1 class="display-4 d-flex align-items-center font-weight-bold">Troll Connection</h1>
-            </div>
+    <div class="container">  
+
+            <div class="jumbotron mt-4 mb-2">
+                <div class="row">
+                    <img src="https://png.icons8.com/color/160/orc.png" alt="Orc Icon" height="100px">
+                    <h1 class="display-4 d-flex align-items-center font-weight-bold titleFont">Troll Connection</h1>
+                </div>
+                
+                <p class="lead font-weight-bold">This is a connection site for Trolls... because Trolls need love too!</p>
+                <hr class="my-4">
+                <p>To get started visit our survey and fill out your profile to see who you get matched with!</p>
+                <p class="lead">
+                <a class="btn btn-warning btn-lg mt-3 font-weight-bold" href="/survey" role="button">
+                    <img class="mr-1" src="https://static.thenounproject.com/png/52479-200.png" alt="Survey Icon" height="40px">
+                    Start Survey</a>
+                </p>
             
-            <p class="lead font-weight-bold">This is a connection site for Trolls... because Trolls need love too!</p>
-            <hr class="my-4">
-            <p>To get started visit our survey and fill out your profile to see who you get matched with!</p>
-            <p class="lead">
-            <a class="btn btn-primary btn-lg mt-3 font-weight-bold" href="/survey" role="button">
-                <img class="mr-1" src="https://static.thenounproject.com/png/52479-200.png" alt="Survey Icon" height="40px">
-                Start Survey</a>
-            </p>
-        
-        </div>
-        
-    
+            </div>
 
-    <footer>
-        <a href="/api/trolls">API Trolls List</a> | <a href="https://github.com/circuitsyn/TrollConnection">GitHub Repo</a> 
+        <footer>
+            <a class="text-warning" href="/api/trolls">API Trolls List</a> <p class="text-warning d-inline-block">|</p> <a class="text-warning" href="https://github.com/circuitsyn/TrollConnection">GitHub Repo</a> 
 
-    </footer>
+        </footer>
 
-</div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
