@@ -102,6 +102,22 @@ var trollArray = [
         "5",
         "1"
         ]
+        },
+    {
+        "name": "TrollKiller The Queen",
+        "photo": "https://i.pinimg.com/236x/49/2a/fe/492afe53e24f6e0fc44732ab9675a2eb.jpg",
+        "scores": [
+        "1",
+        "3",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "1",
+        "5",
+        "1"
+        ]
         }
 
   ];
