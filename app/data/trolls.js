@@ -70,6 +70,22 @@ var trollArray = [
         "5",
         "5"
         ]
+        },
+    {
+        "name": "Fanklina the Artist",
+        "photo": "https://i.pinimg.com/236x/cf/f4/8d/cff48d1587690d8ba721110637475250--geek-art-mists.jpg",
+        "scores": [
+        "1",
+        "3",
+        "4",
+        "2",
+        "2",
+        "3",
+        "5",
+        "5",
+        "5",
+        "1"
+        ]
         }
 
   ];
