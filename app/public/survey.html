@@ -313,7 +313,7 @@ function findMatch(trollData, newTroll) {
     for(i = 0; i < trollData.length; i++){       
         
         for(j = 0; j < newTroll.scores.length; j++){
-            count = Math.abs(trollArray[i].scores[j] - newTroll.scores[j]);
+            count = Math.abs(trollData[i].scores[j] - newTroll.scores[j]);
             
             status += count;
             
@@ -322,7 +322,7 @@ function findMatch(trollData, newTroll) {
         currentNum = status; 
         if((currentNum < leadingMatchDiffNum) || (currentNum == leadingMatchDiffNum)){
                 leadingMatchDiffNum = currentNum;
-                resultTroll = trollArray[i-1];
+                resultTroll = trollData[i-1];
         }
     }
     postResult(resultTroll);
