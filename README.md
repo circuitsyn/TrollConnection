@@ -9,10 +9,10 @@ The greeting page to get started on taking the survey.
 ![Troll Connection Home Page](app/public/Images/trollHome.PNG)
 
 ## Survey Page
-
-
-![Troll Connection Survey Page](app/public/Images/surveyPage.PNG)
 The survey page where a troll would fill out their info for submission.
+
+![Troll Connection Survey Page](app/public/Images/surveyPage.png)
+
 
 ## Result Modal
 The result modal that pops up upon submission telling you your match.
