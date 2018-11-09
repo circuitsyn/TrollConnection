@@ -30,3 +30,8 @@ body, html {
 .titleFont {
     font-family: 'orcFont', Courier, monospace;
 }
+
+.titleLarge {
+    font-size: 90px;
+    
+}
