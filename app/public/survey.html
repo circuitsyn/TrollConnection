@@ -284,10 +284,7 @@
 <script type="text/javascript">
 
 
-var leadingMatchDiffNum = 0;
-var currentNum = 0;
-var status = 0;
-var count = 0;
+
 var resultTroll;
 
 //function to grab data and find match
@@ -320,6 +317,7 @@ function findMatch(trollData, newTroll) {
             //parseInt is used to prevent string concatination as well as avoiding +=
             count = Math.abs(parseInt(trollData[i].scores[j]) - parseInt(newTroll.scores[j]));
             status = parseInt(status) + count;
+        
         }
         
         currentNum = status; 
